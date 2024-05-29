@@ -33,12 +33,13 @@
                 valide.</small>
         </div>
     </div>
-    <button [disabled]="kittenForm.invalid" type="submit">Créer Kitten</button>
+    <button [disabled]="kittenForm.invalid" type="submit">Ajouter Chaton</button>
     <div *ngIf="kittenForm.dirty && kittenForm.invalid">
-        <small *ngIf="kittenForm.controls['name'].errors?.['required']">Le champ nom est requis.</small>
-        <small *ngIf="kittenForm.controls['race'].errors?.['required']">Le champ race est requis.</small>
-        <small *ngIf="kittenForm.controls['birthdate'].errors?.['required']">La date de naissance est requise.</small>
-        <small *ngIf="kittenForm.controls['image'].errors?.['required']">Une URL pour l'image est requise.</small>
+        <small *ngIf="kittenForm.controls['name'].errors?.['required']">Le champ nom est requis.<br></small>
+        <small *ngIf="kittenForm.controls['race'].errors?.['required']">Le champ race est requis.<br></small>
+        <small *ngIf="kittenForm.controls['birthdate'].errors?.['required']">La date de naissance est
+            requise.<br></small>
+        <small *ngIf="kittenForm.controls['image'].errors?.['required']">Une URL pour l'image est requise.<br></small>
         <small *ngIf="kittenForm.controls['image'].errors?.['pattern']">L'adresse rentrée n'est pas une adresse d'image
             valide.</small>
     </div>

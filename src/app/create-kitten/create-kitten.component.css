@@ -1,0 +1,64 @@
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    /* Limitation de la largeur pour une meilleure lisibilité */
+    margin: 0 auto;
+    /* Centrage horizontal */
+}
+
+div {
+    margin-bottom: 20px;
+    /* Espacement entre les champs */
+}
+
+label {
+    font-weight: bold;
+    /* Texte en gras */
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 8px;
+    /* Espacement à l'intérieur du champ */
+    width: 100%;
+    /* Largeur du champ à 100% */
+    margin-top: 5px;
+    /* Espacement avec le label */
+    border: 1px solid #ccc;
+    /* Bordure grise */
+    border-radius: 5px;
+    /* Coins arrondis */
+}
+
+small {
+    color: red;
+    /* Couleur du texte en rouge */
+}
+
+button {
+    padding: 10px 20px;
+    /* Espacement interne du bouton */
+    background-color: #4CAF50;
+    /* Couleur de fond */
+    color: white;
+    /* Couleur du texte */
+    border: none;
+    /* Suppression de la bordure */
+    border-radius: 5px;
+    /* Coins arrondis */
+    cursor: pointer;
+    /* Curseur de type pointer au survol */
+}
+
+button:disabled {
+    background-color: #ccc;
+    /* Couleur de fond grise pour les boutons désactivés */
+    cursor: not-allowed;
+    /* Curseur de type not-allowed pour les boutons désactivés */
+}
+
+button:hover {
+    background-color: #45a049;
+    /* Changement de couleur au survol */
+}
