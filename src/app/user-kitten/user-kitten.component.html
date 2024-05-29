@@ -1,0 +1,12 @@
+<h2>Chatons adoptés</h2>
+
+<div *ngFor="let kitten of adoptedKittens" (mouseenter)="onMouseEnter(kitten)" (mouseleave)="onMouseLeave()">
+    <img [src]="kitten.image" width="216" height="144" alt="">
+    <div *ngIf="hoveredKitten === kitten">
+        <div class="kitten-info">
+            <strong>Name:</strong> {{ hoveredKitten.name }}<br>
+            <strong>Race:</strong> {{ hoveredKitten.race }}<br>
+            <strong>Birthdate:</strong> {{ hoveredKitten.birthdate }}<br>
+        </div>
+    </div>
+</div>

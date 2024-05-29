@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 100vh;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-right: 1px solid #ccc;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    padding: 20px;
+    /* Ajoute du padding autour des composants */
+    overflow-y: auto;
+    /* Permet de scroller si le contenu dépasse la hauteur du viewport */
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* Assure que le main utilise toute la hauteur du viewport */
+    box-sizing: border-box;
+    /* Inclut le padding dans la hauteur totale */
+}

@@ -1,0 +1,45 @@
+<form [formGroup]="kittenForm" (ngSubmit)="createKitten(kittenForm.value)">
+    <div>
+        <label for="name">Nom:</label>
+        <input formControlName="name" id="name" type="text" required />
+        <div
+            *ngIf="kittenForm.controls['name'].invalid && (kittenForm.controls['name'].dirty || kittenForm.controls['name'].touched)">
+            <small *ngIf="kittenForm.controls['name'].errors?.['required']">Ce champ est requis.</small>
+        </div>
+    </div>
+    <div>
+        <label for="race">Race:</label>
+        <input formControlName="race" id="race" type="text" required />
+        <div
+            *ngIf="kittenForm.controls['race'].invalid && (kittenForm.controls['race'].dirty || kittenForm.controls['race'].touched)">
+            <small *ngIf="kittenForm.controls['race'].errors?.['required']">Ce champ est requis.</small>
+        </div>
+    </div>
+    <div>
+        <label for="birthdate">Date de naissance:</label>
+        <input formControlName="birthdate" id="birthdate" type="date" required />
+        <div
+            *ngIf="kittenForm.controls['birthdate'].invalid && (kittenForm.controls['birthdate'].dirty || kittenForm.controls['birthdate'].touched)">
+            <small *ngIf="kittenForm.controls['birthdate'].errors?.['required']">Ce champ est requis.</small>
+        </div>
+    </div>
+    <div>
+        <label for="image">Image URL:</label>
+        <input formControlName="image" id="image" type="text" required />
+        <div
+            *ngIf="kittenForm.controls['image'].invalid && (kittenForm.controls['image'].dirty || kittenForm.controls['image'].touched)">
+            <small *ngIf="kittenForm.controls['image'].errors?.['required']">Ce champ est requis.</small>
+            <small *ngIf="kittenForm.controls['image'].errors?.['pattern']">Veuillez entrer une URL d'image
+                valide.</small>
+        </div>
+    </div>
+    <button [disabled]="kittenForm.invalid" type="submit">Créer Kitten</button>
+    <div *ngIf="kittenForm.dirty && kittenForm.invalid">
+        <small *ngIf="kittenForm.controls['name'].errors?.['required']">Le champ nom est requis.</small>
+        <small *ngIf="kittenForm.controls['race'].errors?.['required']">Le champ race est requis.</small>
+        <small *ngIf="kittenForm.controls['birthdate'].errors?.['required']">La date de naissance est requise.</small>
+        <small *ngIf="kittenForm.controls['image'].errors?.['required']">Une URL pour l'image est requise.</small>
+        <small *ngIf="kittenForm.controls['image'].errors?.['pattern']">L'adresse rentrée n'est pas une adresse d'image
+            valide.</small>
+    </div>
+</form>

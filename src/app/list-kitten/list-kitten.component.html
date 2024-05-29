@@ -1,0 +1,17 @@
+<h1>Nos chatons ont du talent</h1>
+<h2>Liste des chatons adoptables</h2>
+<div *ngFor="let kitten of kittens" (mouseenter)="onMouseEnter(kitten)" (mouseleave)="onMouseLeave()">
+    <img [src]="kitten.image" width="216" height="144" alt="">
+    <div *ngIf="hoveredKitten === kitten">
+        <div class="kitten-info">
+            <strong>Name:</strong> {{ hoveredKitten.name }}<br>
+            <strong>Race:</strong> {{ hoveredKitten.race }}<br>
+            <strong>Birthdate:</strong> {{ hoveredKitten.birthdate }}<br>
+            <button (click)="adoptKitten(kitten)">Adopter</button> <br> <br>
+        </div>
+    </div>
+</div>
+
+
+<h2>Ajouter un chaton adoptable</h2>
+<app-create-kitten (kittenCreated)="onKittenCreated($event)"></app-create-kitten>
